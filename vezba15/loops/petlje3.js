@@ -54,5 +54,5 @@ var karakter ="c";
 for (i in a){
     if (a[i]==karakter){
        index = i;   
-    } else console.log("Slova "+ karakter + "nema u nizu");
-}console.log ("Slovo "+ karakter + " je na "+ index + " mstu");
+    } 
+} console.log ("Slovo "+ karakter + " je na "+ index + " mestu");

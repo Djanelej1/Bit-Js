@@ -61,7 +61,7 @@ for (x = 0; x < niz.length; x++) {
     }
 } console.log(zbir);
 
-//Sesti zadatak pokusaj
+//Sesti zadatak -neuspeo pokusaj
 var niz = [2, 4, -2, 7, -2, 4, 2];
 for (x = 0; x < niz.length / 2; x++) {
     for (y = niz.length - 1; y > niz.lenght / 2; y--) {
@@ -87,19 +87,21 @@ for (x = 0; x < niz.length / 2; x++) {
 //sedmi zadatak - neuspeo pokusaj
 var first =[4, 5, 6, 2];
 var second =[3, 8, 11, 9];
-var third =[];
-var t =0;
-for (x=0;x<first.lenght;x++){
-   for (y=0;y<second.length;y++){
-  third[t]=first[x];
-  third[t+1]=second[y]
-  second[y]=third[t+1];
+for (x=1;x<first.lenght;x+=2){
+for (y=0;y<second.length;y++){
+  
+    first[(first.lenght+1)-first.length]=second[y];
+  }
     }
-}console.log ("treci niz je " + third[t]);
+console.log (first);
 
 //osmi zadatak
 var first =[4, 5, 6, 2];
 var second =[3, 8, 11, 9];
+    for (y=0;y<second.length;y++){
+        first[first.length] = second[y];
+    }
+ console.log(first);
  
 //deveti zadatak 
 var a = [4, 6, 2, 8, 2, 2]; 
@@ -115,8 +117,9 @@ var e = 78;
 var p = 3; 
 var a = [2, -2, 33, 12, 5, 8];
 var pom=0;
-for (i=0;i<a.lenght;i++){
-  if (p==a[i] ){
-   a[i]= e;
-  }}console.log(a);
 
+for (i=0;i<a.lenght;i++){
+  if (i==p){
+  delete a[i];
+   }
+}console.log(a);
