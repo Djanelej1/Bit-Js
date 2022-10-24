@@ -110,9 +110,13 @@ for (i=0;i<a.length;i++){
     }
 }console.log (a);
 
-//deseti zadatak
+//deseti zadatak -neuspeo pokusaj
 var e = 78; 
 var p = 3; 
 var a = [2, -2, 33, 12, 5, 8];
-var newA =[];
+var pom=0;
+for (i=0;i<a.lenght;i++){
+  if (p==a[i] ){
+   a[i]= e;
+  }}console.log(a);
 
