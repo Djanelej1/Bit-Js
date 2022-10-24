@@ -40,8 +40,9 @@ while(broj>0){
 var rec= "Eclip542se";
 var brojSlova =0;
 for (i=0; i<rec.length; i++){
-    if (i=="0" && i=='1' && i=="2" && i=="3" &&
-        i=="4" && i=="5" && i=="6" && i=="7" && i=="8" && i=="9"){
+    if (rec[i]!="0"&& rec[i]!='1' && rec[i]!="2"&& rec[i]!="3" &&
+    rec[i]!="4" && rec[i]!="5" && rec[i]!="6"&& rec[i]!="7" && rec[i]!="8" 
+    && rec[i]!="9"){
         brojSlova+=1;
     }
 
@@ -49,8 +50,9 @@ for (i=0; i<rec.length; i++){
 //7.Write a code to find on which index in array is letter "C" and show that index on screen. 
 var a = [1, 3, 32, '$', 'g', 'h', 't', 's', 'c', 66, 23, 'h2'];
 var index=0;
+var karakter ="c";
 for (i in a){
-    if (a[i]=="C"){
-       index = i;
-    } else {"slovo C ne postoji u nizu"}
-} console.log ("Slovo c je na "+ index + " mstu");
+    if (a[i]==karakter){
+       index = i;   
+    } else console.log("Slova "+ karakter + "nema u nizu");
+}console.log ("Slovo "+ karakter + " je na "+ index + " mstu");
