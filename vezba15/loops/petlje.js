@@ -30,13 +30,14 @@ for (x=0;x<niz.length;x++){
     console.log ("zbir brojeva je " + zbir + " proizvod brojeva je " + proizvod);
 
 //cetvrti zadatak
-
-var niz= ['1', 'A','B', "c", "r", true,NaN, undefined];
+var string="";
+var niz= ['1', 'A','B', "c", "r", true,NaN, undefined];//uraditi ponovo
 for (x=0;x<=niz.length-1;x++){
-    console.log(niz[x]);
+string+=niz[x];
+    
 } 
-
-//peti zadatak
+console.log(string);
+//peti zadatak uraditi ponovo
 var a = [[1, 2, 1, 24],[8, 11, 9, 4],[7, 0, 7, 27]];
 for (i=0;i<=a.length-1;i++){
    console.log  (a[i]);
@@ -49,7 +50,7 @@ for (x=0;x<=20;x++){
 }
  console.log(zbirKvadrata);
 
- //sedmi zadatak
+ //sedmi zadatak // uraditi i preko niza
  var oceneNiz= [80, 77,88, 95, 68];
  var prosek=0;
   for (x=0;x<=oceneNiz.length-1;x++){

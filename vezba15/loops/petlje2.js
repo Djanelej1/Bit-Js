@@ -19,7 +19,7 @@ for (x = 0; x <= niz.length - 1; x++) {
 var niz = [-3, 11, 5, 3.4, -8];
 var nizPomnozen = [];
 for (x = 0; x <= niz.length - 1; x++) {
-    if (x > 0) {
+    if (niz[x] > 0) {
         console.log((niz[x] * 2));
     } else { console.log(niz[x]) }
 }
@@ -46,7 +46,7 @@ for (var i in a) {
 
     }
 } for (var i in a){
-    if (a[i]<secMin && a[i]!=min){
+    if (a[i]<secMin && a[i]>min){
         secMin=a[i];
     }
 } console.log ("Drugi najmanji broj je " + secMin);
@@ -64,7 +64,7 @@ for (x = 0; x < niz.length; x++) {
 //Sesti zadatak -neuspeo pokusaj
 var niz = [2, 4, -2, 7, -2, 4, 2];
 for (x = 0; x < niz.length / 2; x++) {
-    for (y = niz.length - 1; y > niz.lenght / 2; y--) {
+    for (y = niz.length - 1; y <niz.lenght / 2; y--) {
         if (niz[x] != niz[y]) {
             console.log("Niz nije simetrican");
         }else{console.log("niz je Simetrican");}
@@ -117,9 +117,26 @@ var e = 78;
 var p = 3; 
 var a = [2, -2, 33, 12, 5, 8];
 var pom=0;
-
+a[a.lenght]=e;
 for (i=0;i<a.lenght;i++){
   if (i==p){
-  delete a[i];
+  pom=a[i];
+  a[i]=a[i+1];
+  a[i+1]=pom;
    }
 }console.log(a);
+
+//Resenje
+if(p <= a.length && p >= 0) {
+    for(i = a.length; i > p; i--) {
+        a[i] = a[i-1];
+    }
+
+    a[p] = e;
+
+    for(i = 0; i < a.length; i++) {
+        console.log(a[i]);
+    }
+} else {
+    console.log('error');
+}

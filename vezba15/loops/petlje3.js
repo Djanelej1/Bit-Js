@@ -37,7 +37,7 @@ while(broj>0){
 }console.log (Math.trunc(suma)); // ne znam kako da uklonim vrednost iza tacke, a nasla sam ovu funkciju na netu
 
 //6.Write a code to count all letters in a word and show that count on screen. 
-var rec= "Eclip542se";
+var rec= "Eclip546ssse";
 var brojSlova =0;
 for (i=0; i<rec.length; i++){
     if (rec[i]!="0"&& rec[i]!='1' && rec[i]!="2"&& rec[i]!="3" &&
