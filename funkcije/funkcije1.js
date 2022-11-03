@@ -108,17 +108,17 @@ function nacrtaj(a,b,c){
     var drugiRed=zvezdica.repeat(b);
     var trecired=zvezdica.repeat(c);
     var niz=[];
-    niz.push(prviRed,drugiRed,trecired);
+   niz.push(prviRed,drugiRed,trecired);
 
    for (var i=0;i<=niz.length;i++){
     console.log(niz[i]);
    
    } 
 
-    return niz;
+    return niz[i];
 }
-var crtez =nacrtaj(5,3,7)
-console.log(crtez);
+
+console.log(nacrtaj(5,3,7));
     
 
 

@@ -93,7 +93,7 @@ for (y=0;y<second.length;y++){
     first[(first.lenght+1)-first.length]=second[y];
   }
     }
-console.log (first);
+console.log (first+second);
 
 //osmi zadatak
 var first =[4, 5, 6, 2];
@@ -116,15 +116,15 @@ for (i=0;i<a.length;i++){
 var e = 78; 
 var p = 3; 
 var a = [2, -2, 33, 12, 5, 8];
-var pom=0;
-a[a.lenght]=e;
-for (i=0;i<a.lenght;i++){
-  if (i==p){
-  pom=a[i];
-  a[i]=a[i+1];
-  a[i+1]=pom;
-   }
-}console.log(a);
+//var pom=0;
+//a[a.lenght]=e;
+//for (i=0;i<a.lenght;i++){
+  //if (i==p){
+  //pom=a[i];
+  //a[i]=a[i+1];
+  //a[i+1]=pom;
+   
+//}console.log(a);
 
 //Resenje
 if(p <= a.length && p >= 0) {
