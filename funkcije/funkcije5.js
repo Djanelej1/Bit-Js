@@ -121,13 +121,78 @@ function multiOperation(num1,num2, multiplier){
 function abbString(array,num){
   var newStr ="";
   var partStr="";
-  var str= array[0];
   for (i=0; i<=array.length;i++){
-    if (typeof(array[i])===String && str.length>=2){
-     partStr= str.substring(0,num);
-     console.log(partStr);
-     newStr+=partStr;
+    if (typeof(array[i])==="string" && array[i].length>=num){
+     partStr = array[i].substring(0,num);
+     newStr +=partStr;
     }
   }return newStr;
 }
 console.log(abbString(["M", "Anne", 12, "Steve", "Joe","John", "David", "Mark", true, "A"],2));
+
+//8. Write a program that takes a string and prints its characters out in reversed order in the
+//console.
+function reverseString(str) {
+  var newString = "";
+  for (var i = str.length - 1; i >= 0; i--) {
+      newString += str[i];
+  }
+  return newString;
+}
+console.log(reverseString("Belgrade Institute of Technology"));
+
+//9.Write a program that displays all the combinations of two numbers between 1 and 7.
+function twoNumCom(num1, num2){
+  var numOfComb=0;
+  for (i=num1;i<=num2;i++){
+    for (y=num2; y>=num1;y--){
+      if (i!=y){
+        numOfComb+=1;
+        console.log(i+"."+y); 
+        
+      } else { numOfComb+=0;}
+
+    }
+  } return numOfComb;
+}console.log(twoNumCom(1,7));
+
+
+//10. Write a program that checks if the entered number is a prime number (i.e. divisible only
+//by 1 and by itself).
+
+function isPrime(num){
+ for (var i=2; i<num;i++){
+  if (num%i===0){
+    return false;
+  }
+  } return num>1;
+ }
+console.log(isPrime(17));
+
+//11. Check if a given string is a palindrome (spaces are ignored).
+
+function isPalindrome(str){
+  var strNoSpace = str.replace(/\s/g, '');
+  for (var i=0; i<=str.length/2; i++){
+    for (var y=str.length-1; y>=str.length/2; y--){
+      if (str[i]===str[y]){
+        return true;
+      } return false;
+    }
+  } 
+} console.log(isPalindrome("a nut for a jar of tuna"));
+
+//12. Write a program that calculates the greatest common divisor of two integers. Note: The
+//greatest common divisor of two non-zero integers is the greatest positive number that
+//divides both numbers with no remainder.
+
+function maxDivisor(num1,num2){
+  var maxDiv=1;
+  for ( var i=2; i<=num1;i++){
+    for (var y=2; y<=num2;y++){
+      if (num1%i===0 && num2%y===0 && i===y && i>maxDiv){
+        maxDiv=i; 
+      }
+    }
+  } return maxDiv;
+} console.log(maxDivisor(192,42));
