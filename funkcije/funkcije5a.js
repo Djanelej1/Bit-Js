@@ -30,10 +30,9 @@ console.log(isLeap(1900));
 function howMuchVowels(string) {
     var vovNum = 0;
     var consNum = 0;
-    for (var i = 0; i <= string.length - 1; i++) {
-        if (string[i] === "a" || string[i] === "e" ||                                 //moze za pojedinacan string ali ne za recenicu 
-            string[i] === "i" || string[i] === "o" || string[i] === "u") {
-            vovNum += 1;
+    for (var i = 0; i <= string.length; i++) {
+        if (string.match(/[a,e,i,o,u]/)) {                             //netacno
+            return string.length;
         } else consNum += 1;
     } return (" Broj Vowels in " + string + " is " + vovNum + "and consonants " + consNum);
 } console.log(howMuchVowels("Samoglasnik je"));
@@ -43,7 +42,7 @@ function howMuchVowels(string) {
 function typeofData(array) {
     var nizVred = []
     var type;
-    for (var i = 0; i <= array. - 1; i++) {
+    for (var i = 0; i <= array.length - 1; i++) {
         type = typeof (array[i]);
         nizVred.push(type);
     } return nizVred;
@@ -54,17 +53,23 @@ function typeofData(array) {
 //    “pp”, “as23s”, “00sd”] =&gt; rezultat [“pp”].
 function noviNizbezBrojeva(array) {
     var noviNiz = [];
-
-    for (var i = 0; i <= array.length; i++) {
-        for (var y = 0; y < array[i].length; y++) {
-            if (!isNaN(array[i][y]) && typeof (array[i][y]) !== "number") {
-                noviNiz.push(array[i]);
-            }
+    
+    for (var i = 0; i < array.length; i++) {
+          if (/[0-9]/.test(array[i])){
+                continue;}
+                else{ noviNiz.push(array[i]);}
+            }return noviNiz;
 
         }
-    } return noviNiz;
-} console.log(noviNizbezBrojeva(["12bb", "pp", "as23s", "00sd"]));
-
+    
+     
+ console.log(noviNizbezBrojeva(["12bb", "pp", "as23s", "00sd"]));
+ 
+ //function containsNumbers(str) {
+  //  return /\d/.test(str);             // f-ja za nalazenje cifara u stringu
+  //}
+  
+  console.log(containsNumbers('hello123')); 
 
 //6.Kreirati funkciju koja prima string a kao rezultat ispisuje niz koji u sebi ima:
 //dužinu stringa, prvi karakter stringa, poslednji karakter, središnji karakter ako
@@ -73,24 +78,22 @@ function noviNizbezBrojeva(array) {
 //ili “not found” ako nema ponavljanja.
 
 function opisStringa(string) {
-    var nizOpis;
+    
     var indexDrug = 0;
-    var sred2 = "";
-
-    if (string.lenght % 2 == 0) {
-        sred2 = string[string.length / 2 - 1] + string[string.length / 2];
-        console.log(string[(string.length / 2) - 1]);
-
+    var sred2 = " ";
+    var sredNiza = Math.floor(string.length/2);
+    for (var i=0; i<=string.length; i++){
+    if (string.length % 2 == 0) {
+        sred2 = string[sredNiza-1] + string[sredNiza];
 
     } else {
-        sred2 = string[Math.floor(string.length / 2)];
-    }
+        sred2 = string[sredNiza];
+    }}
 
     for (var i = Math.floor(string.length / 2); i <= string.length - 1; i++) {
         if (string[i] == sred2) {
             indexDrug = i;
-            console.log(indexDrug);
-
+           
         } else { indexDrug = "not found" }
     } return [string.length, string[0], string[string.length - 1], sred2, "@index " + indexDrug];
 
