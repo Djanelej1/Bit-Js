@@ -88,7 +88,7 @@ function stringInArray(s) {
     var newArray = Array.from(s)
     for (var i = 0; i <= newArray.length; i++) {
         if (newArray[i] === " ") {
-            newArray[i] = null;
+            newArray[i] = null;                                 // f-ja Array.from(string) pretvara string u niz(slovo po slovo)
         }
     } return newArray;
 }
@@ -124,20 +124,23 @@ console.log("Broj je prost " + prostBroj);
 
 //Write a function that replaces spaces in a string with provided separator. If separator is not
 //provided, use “-” (dash) as the default separator.
-function separatorChange(a, rec) {
-    var noviString = "";
-    for (var i = 0; i <= rec.lengh; i++) {
-        if (rec[i] === " ") {
-            rec[i] = a;
-            noviString += rec[i];
-        } else if (a!="+" && a!="_") {            /// ne znam kako da resim ovo
-            rec[i] = "-";
-            noviString = +rec[i];
-        } 
-    }return noviString;
-}
-
-console.log(separatorChange("+", "Bilo jednom jedno pile"));
+function replaceSpace(string, sep) {
+    var output = '';
+    sep = sep || '-';
+    for (var index = 0; index < string.length; index++) {
+        var element = string[index];
+        if (element === ' ') {
+            output += sep;
+        } else {
+            output += element;
+        }
+    }
+ 
+    return output;
+ }
+ 
+ var result = replaceSpace('bio jednom jedan ',);
+ console.log(result);
 
 //10.Write a function to get the first n characters and add “...” at the end of newly created string.
 function uzmiString(n, rec){

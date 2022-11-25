@@ -140,7 +140,7 @@ function smallerArr(array, num) {
     } return part;
 
 }
+console.log(smallerArr([2, 3, 4, 5, 6], 2));
 console.log(smallerArr([2, 3, 4, 5, 6], 3));
-
 
 

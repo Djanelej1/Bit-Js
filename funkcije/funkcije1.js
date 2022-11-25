@@ -78,25 +78,29 @@ console.log (aritmet);
 // Write a program that draws a square of a given size. For example, if the size of square
 //is 5 the program should draw:
 
-function square(a){
-    var zvezdica ="*";
-    var sirina =a;
-    var duzina =a;
-    var square ='';
-for (var i=0;i<=a;i++) {
-    for (var j=0;j<=a;j++){
-        if (i==j || j==i){
-            square+="*";
-        }else if (i==a-1|| j==a-1)
-        { square+="*";}
-        else {square =" ";}
+function square(a) {
+    var result = '';
+    for (var i = 0; i < a; i++) {
+        for (var j = 0; j < a; j++) {
+            if (i == 0 || i == (a - 1)) {
+                result += '*'
+            } else {
+                if (j == 0 || j == (a - 1)) {
+                    result += '*'
+                } else {
+                    result += ' '
+                }
+            }
+
+        }
+
+        result += '\n';
     }
-    return square;
+
+    console.log(result);
 }
 
-    }
- var kvadrat = square(5);
- console.log (kvadrat);
+square(5);
 
 
  //6. Write a program that draws a horizontal chart representing three given values. For
@@ -110,7 +114,7 @@ function nacrtaj(a,b,c){
     var niz=[];
    niz.push(prviRed,drugiRed,trecired);
 
-   for (var i=0;i<=niz.length;i++){
+   for (var i=0;i<niz.length;i++){
     console.log(niz[i]);
    
    } 
@@ -145,7 +149,7 @@ console.log(kolikoPutaBroj);
 
 //Write a program that calculates the sum of odd elements of a given array.
 function sumOdd(a){
-    suma =0;
+    var suma =0;
     for (var i=0;i<a.length;i++){
         if (a[i]%2!=0){
             suma =suma+a[i];
@@ -163,7 +167,7 @@ console.log( sumaNeparnih);
 //odify the program so it calculates the number of both letters a and A.
 
 function count(a, e, t){
-    suma = 0;
+    var suma = 0;
     var znak =e;
     var drugiZnak =t;
     for (var i=0;i<=a.length; i++){
@@ -187,5 +191,5 @@ function povecaj(nekiString,a){
  return noviString;
 }
 
-var noviString = povecaj("Maglovit dan ", 4);
+var noviString = povecaj("Maglovit dan", 4);
 console.log (noviString);

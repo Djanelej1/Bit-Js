@@ -74,7 +74,43 @@ function FToC(num) {
 // validatePassword(&quot;iLoveYou&quot;) ➞ false // Missing a number.
 // validatePassword(&quot;Fhg93@&quot;) ➞ true // OK!
 
+function checkLength(passoword){
+    if (passoword.length>=6 && passoword<=24){
+        return "Right length"
+    } return "too short"
+} 
+function oneLetter(password){
+    if (/[a-zA-Z]/.test(password)){
+        return "OK"; 
+    } return "must be at least one letter"; 
+} 
 
+function oneDigit(password){
+    if (/[0-9]/.test(password)){
+        return "OK"; 
+    } return "must be at least one digit"; 
+} 
+
+function maxApperencies(password){
+    if(/[a-z0-9](\w{2,}?\w)/.test(password)){
+        return "OK";
+    }return "you can not repeat character more than 2 times in a row"
+}
+
+
+function allowSpecial(password){
+    if (/[^0-9a-zA-Z]/.test(password)){
+        return "Ok"
+    } return "Must be atleast one special char";
+} 
+
+function validatePassword(password){
+    if (checkLength(password)===true && oneLetter(password)===true && oneDigit(password)===true
+        && maxApperencies(password)===true && allowSpecial(password)===true){
+            return "ok";
+        } return [ checkLength(password), oneLetter(password),oneDigit(password),maxApperencies(password),allowSpecial(password)];
+}
+console.log(validatePassword("aaa"));
 
 //6. Create a function that finds how many prime numbers there are, up to the given integer.
 //Examples: primeNumbers(10) ➞ 4 // 2, 3, 5 and 7

@@ -3,13 +3,8 @@
 function dodajNovi(a, rec, slog) {
      
     if(a <= rec.length && a >= 0) {
-        for(i = rec.length; i > a; i--) {
-            rec[i] = rec[i-1];
-        } rec[a] += slog ;                                 //netacno 
-    
-    } else {
-        a=0;
-    } return rec;
+        
+    } return rec.substr(0, a) + slog + rec.substr(a)
 }
 
 console.log(dodajNovi(4, "My Random String", "JS"));
@@ -53,11 +48,37 @@ for ( var i=stringNum.length; i>0; i--){
 //5.5. Write a function to get the last element of an array. Passing a parameter &#39;n&#39; will return the
 //last &#39;n&#39; elements of the array.
 function findTheLast(array,num){
-    var element =0;
-    var lastElement =array.length;
-    for (var i=lastElement; i>=0;i--){
-        if (typeof(num) !="undefined"){
-           element =array[i];
-        }  //netacno
-    } return element;
-}console.log(findTheLast([7, 9, 0, -2]));
+    var lastElement =array[array.length-1];
+    for (var i =0; i<=array.length; i++)
+    if (num!="undefined" && array[i]==num){
+        return [lastElement, array[i]];
+    } else {return lastElement;}
+    } 
+console.log(findTheLast([7, 9, 0, -2],2));
+
+//6. Write a function to create a specified number of elements with pre-filled numeric value
+//array.
+function writeArray(num, value){
+    var array=[];
+    if (typeof(value)==undefined){
+       var value = null;}
+    for (var i=1;i<=num; i++){
+        array.push(value);
+    }return array;
+} console.log(writeArray(3,"rep"));
+
+//8. Write a function to find a word within a string.
+function findWord(string, word){
+    var count = 0;
+    for (i in string){
+        if (/word/.test(string)==true){
+            count ++;
+        }
+    } return "the word " + word + " in string shows " + count + " times";
+} console.log(findWord("aa bb cc dd aa", "aa"));
+
+//9. Write a function to hide email address.
+//&quot;myemailaddress@bgit.rs&quot; -&gt; &quot;mye...@bgit.rs&quot;
+
+//10. Write a program to find the most frequent item of an array.
+//[3, "a", "a", "a", 2, 3, "a", 3, "a', 2, 4, 9, 3]
