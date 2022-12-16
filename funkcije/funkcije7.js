@@ -157,6 +157,6 @@ function diamondArray(num){
     for ( var x = num-1; x>=1; x--){
         diamond.push(writeArray(x));
     }
-    return diamond; 
+    return diamond.join('\r\n'); 
 }console.log(diamondArray(2));
 console.log(diamondArray(5));

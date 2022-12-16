@@ -35,7 +35,7 @@ var c = (function replace(text) {
         newText = text.replace(/m/gi, "*");
         count = text.match(/m/gi).length;
 
-    } return [newText, count];
+    } return `${newText},${count}`;
 })("programMing");
 console.log(c);
 //4.Write a function with parameters name and surname that returns a function that
@@ -72,19 +72,19 @@ console.log(decimal()(134));
 //password is correct or invalid.
 
 function succsessCallback(){
-    return console.log("Your password is invalid!")
+    return console.log("Your password is cool!")
 }
 function errorCallback(){
-    return console.log("Your password is cool!")
+    return console.log("Your password is invalid!")
 }
 
 (function isValid(password){
     
         if (/[0-9]/.test(password) && (password.length>=6)){
             succsessCallback();
-        } errorCallback();
+        } else {errorCallback()};
     
-})("JSGuru123");
+})("JSGuru");
 
 //7.Write a function that filters elements of the given array so that they satisfy a condition
 //given by the callback function.
