@@ -174,6 +174,6 @@ function roundonTwo(array){
 
 console.log(Date());
 var today = new Date();
-console.log(today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds());
+console.log(today.getDate() + "." + today.getMonth()+1 + "." + today.getFullYear());
 console.log(today.toLocaleDateString());
 
