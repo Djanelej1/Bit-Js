@@ -37,10 +37,18 @@
 //   message.value = '';
 // });
 
+//Soccer player
+//○ Create page which has soccer field as bg image
+//○ In top left corner there should be image of soccer player
+//○ When user clicks anywhere on the field, the player is moved to that
+//position
+//○ Add the button which is used to disable player movement
+//○ Images ( https://goo.gl/YDjwi4 )
+
 
 var player = document.getElementById("playerIcon");
 var body1= document.querySelector("body");
-var button = document.getElementById("button3");
+
 function Moving(event) {
 	var xPosition = event.clientX - body1.getBoundingClientRect().left - (player.clientWidth / 2);
 	var yPosition = event.clientY - body1.getBoundingClientRect().top - (player.clientHeight / 2);
@@ -49,14 +57,28 @@ function Moving(event) {
 	player.style.top = yPosition + "px";
  }
  body1.addEventListener("click", Moving);
- 
- function stopMoving() {
-  button.removeEventListener("click", Moving);
+//button.addEventListener("click", () => body1.removeEventListener("click", Moving));
+
+function stopMoving(event){
+  body1.removeEventListener("click", Moving);
 }
- 
- button.removeEventListener("click", Moving);
+var button = document.getElementById("button3");
+ button.addEventListener("click", stopMoving);
+
+//Super Mario
+//○ Create Super Mario emulator
+//○ On right arrow click, Mario should run to the right
+
+//■ Running animation
+//■ Ground should move while Mario is running
+//○ Images ( https://rb.gy/23keik )
+
+
+
+function Move(event){
+  var mario1 = document.getElementById("mario");
+mario1.src='/SuperMarioAssets/mario_running.gif ';
   
-
-
-
+}
+mario1.addEventListener("click", Move);
 
