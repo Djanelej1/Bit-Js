@@ -14,15 +14,19 @@ function myFunction(slika){
 
 var img1 = document.getElementsByTagName("img");
  for (var i = 0; i <img1.length; i++){
-    img1[i].addEventListener("click", function() {
+    img1[i].addEventListener("click", function(event) {
         myFunction(this);
-    });
-    if (img1[i].style.width ===300){
-        "click".stopPropagation();
-    }
- }
+    
+    if (img1[i].style.width =="300px"){
+        event.stopPropagation();
+    }})}
+ 
 
  
+
+document.addEventListener("click", function(event){
+    console.log(event.target);
+})
 
 
  
